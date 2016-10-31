@@ -1,2 +1,6 @@
 class CourseCompleted < ApplicationRecord
+    validates :name, :presence => true
+    validates :code, :presence => true
+    validates :credit, :presence => true
+    validates :grade, :presence => true, :length => { :minimum => 1 }
 end
