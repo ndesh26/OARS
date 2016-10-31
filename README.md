@@ -1,24 +1,8 @@
-# README
+# OARS 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a rails app which is a course registration platform for IITK
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors
+* Abhinav Garg
+* Anuj Nagpal
+* Nayan Deshmukh
