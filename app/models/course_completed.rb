@@ -1,0 +1,2 @@
+class CourseCompleted < ApplicationRecord
+end
