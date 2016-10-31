@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20161031180958) do
     t.string   "email"
     t.integer  "roll"
     t.integer  "phone"
-    t.text     "adderess"
+    t.text     "address"
     t.string   "dob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

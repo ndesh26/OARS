@@ -5,7 +5,7 @@ one:
   email: MyString
   roll: 1
   phone: 1
-  adderess: MyText
+  address: MyText
   dob: MyString
 
 two:
@@ -13,5 +13,5 @@ two:
   email: MyString
   roll: 1
   phone: 1
-  adderess: MyText
+  address: MyText
   dob: MyString
