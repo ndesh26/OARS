@@ -5,4 +5,6 @@ class User < ApplicationRecord
     validates :phone, :presence => true, :length => { :equal => 10 }
     validates :dob, :presence => true
     validates :address, :presence => true
+
+    has_many :course_completed
 end
