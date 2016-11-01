@@ -6,5 +6,5 @@ class User < ApplicationRecord
     validates :dob, :presence => true
     validates :address, :presence => true
 
-    has_many :course_completed
+    has_many :course_completeds
 end
