@@ -4,12 +4,29 @@ class CourseCompletedsController < ApplicationController
   # GET /course_completeds
   # GET /course_completeds.json
   def index
-    @course_completeds = CourseCompleted.all
+    #1st you retrieve the post thanks to params[:post_id]
+    user = User.find(params[:user_id])
+    #2nd you get all the comments of this post
+    @course_completeds = user.course_completeds
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @course_completeds }
+    end
   end
 
   # GET /course_completeds/1
   # GET /course_completeds/1.json
   def show
+    #1st you retrieve the post thanks to params[:post_id]
+    user = User.find(params[:user_id])
+    #2nd you retrieve the comment thanks to params[:id]
+    @course_completed = user.course_completeds.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @course_completed }
+    end
   end
 
   # GET /course_completeds/new
