@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :courses
+    resources :courses do
+        resources :course_requests
+    end
+
     resources :users do
         resources :course_completeds
         member do
