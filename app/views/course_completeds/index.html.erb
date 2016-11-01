@@ -20,9 +20,9 @@
         <td><%= course_completed.code %></td>
         <td><%= course_completed.credit %></td>
         <td><%= course_completed.grade %></td>
-        <td><%= link_to 'Show', course_completed %></td>
-        <td><%= link_to 'Edit', edit_course_completed_path(course_completed) %></td>
-        <td><%= link_to 'Destroy', course_completed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [course_completed.user, course_completed] %></td>
+        <td><%= link_to 'Edit', edit_user_course_completed_path(course_completed.user, course_completed) %></td>
+        <td><%= link_to 'Destroy', [course_completed.user, course_completed], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Course Completed', new_course_completed_path %>
+<%= link_to 'New Course Completed', new_user_course_completed_path %>
