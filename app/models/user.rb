@@ -7,4 +7,5 @@ class User < ApplicationRecord
     validates :address, :presence => true
 
     has_many :course_completeds
+    has_secure_password
 end
