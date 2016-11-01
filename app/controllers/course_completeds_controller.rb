@@ -1,12 +1,12 @@
 class CourseCompletedsController < ApplicationController
   before_action :set_course_completed, only: [:show, :edit, :update, :destroy]
 
-  # GET /course_completeds
-  # GET /course_completeds.json
+  # GET /users/:user_id/course_completeds
+  # GET /users/:user_id/course_completeds.xml
   def index
-    #1st you retrieve the post thanks to params[:post_id]
+    #1st you retrieve the user thanks to params[:user_id]
     user = User.find(params[:user_id])
-    #2nd you get all the comments of this post
+    #2nd you get all the course_completeds of this user
     @course_completeds = user.course_completeds
 
     respond_to do |format|
@@ -15,12 +15,12 @@ class CourseCompletedsController < ApplicationController
     end
   end
 
-  # GET /course_completeds/1
-  # GET /course_completeds/1.json
+  # GET /users/:user_id/course_completeds/1
+  # GET /users/:user_id/course_completeds/1.xml
   def show
-    #1st you retrieve the post thanks to params[:post_id]
+    #1st you retrieve the user thanks to params[:user_id]
     user = User.find(params[:user_id])
-    #2nd you retrieve the comment thanks to params[:id]
+    #2nd you retrieve the course_completed thanks to params[:id]
     @course_completed = user.course_completeds.find(params[:id])
 
     respond_to do |format|
@@ -29,59 +29,89 @@ class CourseCompletedsController < ApplicationController
     end
   end
 
-  # GET /course_completeds/new
+  # GET /users/:user_id/course_completeds/new
   def new
-    @course_completed = CourseCompleted.new
+    #1st you retrieve the user thanks to params[:user_id]
+    user = User.find(params[:user_id])
+    #2nd you build a new one
+    @course_completed = user.course_completeds.build
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @course_completed }
+    end
   end
 
-  # GET /course_completeds/1/edit
+  # GET /users/:user_id/course_completeds/1/edit
   def edit
+    #1st you retrieve the user thanks to params[:user_id]
+    user = User.find(params[:user_id])
+    #2nd you retrieve the course_completed thanks to params[:id]
+    @course_completed = user.course_completeds.find(params[:id])
   end
 
-  # POST /course_completeds
-  # POST /course_completeds.json
+  # user /users/:user_id/course_completeds
+  # user /users/:user_id/course_completeds.xml
   def create
-    @course_completed = CourseCompleted.new(course_completed_params)
+    #1st you retrieve the user thanks to params[:user_id]
+    user = User.find(params[:user_id])
+    #2nd you create the course_completed with arguments in params[:course_completed]
+    @course_completed = user.course_completeds.create(course_completed_params)
 
     respond_to do |format|
       if @course_completed.save
-        format.html { redirect_to @course_completed, notice: 'Course completed was successfully created.' }
-        format.json { render :show, status: :created, location: @course_completed }
+        #1st argument of redirect_to is an array, in order to build the correct route to the nested resource course_completed
+        format.html { redirect_to([@course_completed.user, @course_completed], :notice => 'course_completed was successfully created.') }
+        #the key :location is associated to an array in order to build the correct route to the nested resource course_completed
+        format.xml  { render :xml => @course_completed, :status => :created, :location => [@course_completed.user, @course_completed] }
       else
-        format.html { render :new }
-        format.json { render json: @course_completed.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @course_completed.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /course_completeds/1
-  # PATCH/PUT /course_completeds/1.json
+  # PATCH/PUT /users/:user_id/course_completeds/1
+  # PATCH/PUT /users/:user_id/course_completeds/1.xml
   def update
+    #1st you retrieve the user thanks to params[:user_id]
+    user = User.find(params[:user_id])
+    #2nd you retrieve the course_completed thanks to params[:id]
+    @course_completed = user.course_completeds.find(params[:id])
+
     respond_to do |format|
-      if @course_completed.update(course_completed_params)
-        format.html { redirect_to @course_completed, notice: 'Course completed was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course_completed }
+      if @course_completed.update_attributes(course_completed_params)
+        #1st argument of redirect_to is an array, in order to build the correct route to the nested resource course_completed
+        format.html { redirect_to([@course_completed.user, @course_completed], :notice => 'course_completed was successfully updated.') }
+        format.xml  { head :ok }
       else
-        format.html { render :edit }
-        format.json { render json: @course_completed.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @course_completed.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /course_completeds/1
-  # DELETE /course_completeds/1.json
+  # DELETE /users/:user_id/course_completeds/1
+  # DELETE /users/:user_id/course_completeds/1.xml
   def destroy
+    #1st you retrieve the user thanks to params[:user_id]
+    user = User.find(params[:user_id])
+    #2nd you retrieve the course_completed thanks to params[:id]
+    @course_completed = user.course_completeds.find(params[:id])
     @course_completed.destroy
+
     respond_to do |format|
-      format.html { redirect_to course_completeds_url, notice: 'Course completed was successfully destroyed.' }
-      format.json { head :no_content }
+      #1st argument reference the path /users/:user_id/course_completeds/
+      format.html { redirect_to(user_course_completeds_url) }
+      format.xml  { head :ok }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course_completed
-      @course_completed = CourseCompleted.find(params[:id])
+      user = User.find(params[:user_id])
+      @course_completed = user.course_completeds.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
