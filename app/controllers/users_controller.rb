@@ -61,10 +61,15 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /user/:id/request_course
+  def request_course
+    @user = User.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = user.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
