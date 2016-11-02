@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(version: 20161101192908) do
     t.string   "phone"
     t.text     "address"
     t.string   "dob"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end
