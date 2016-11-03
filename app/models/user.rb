@@ -11,5 +11,16 @@ class User < ApplicationRecord
     has_secure_password
     has_many :course_requests, class_name: "Request", foreign_key: "user_id", dependent: :destroy
     has_many :courses, through: :course_requests
+
+    def request(course)
+        course_requests.create(course_id: course.id, status: "Waiting")
+    end
+
+    def delete_request(course)
+        course_requests.find_by(ccourse_id: course.id).destroy
+    end
+
+    def requested?(course)
+        courses.include?(course)
     end
 end
