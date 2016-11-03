@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   # GET /user/:id/request_course
   def request_course
     @user = User.find(params[:id])
-    @requested_courses = @user.course_requests
+    @requested_courses = @user.courses
     @courses = Course.all
   end
 
