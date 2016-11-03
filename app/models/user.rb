@@ -17,7 +17,7 @@ class User < ApplicationRecord
     end
 
     def delete_request(course)
-        course_requests.find_by(ccourse_id: course.id).destroy
+        course_requests.find_by(course_id: course.id).destroy
     end
 
     def requested?(course)
