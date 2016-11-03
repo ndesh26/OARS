@@ -1,3 +1,31 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    font-family: Helvetica, Geneva, Arial, sans-serif;
+    font-size: small;
+    font-color: #000;
+    background-color: #e3e009;
+}
+ 
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border: 3px solid red;
+    background-color: lightgrey;
+}    
+
+th {
+    background-color: grey;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color:grey};
