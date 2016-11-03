@@ -1,0 +1,7 @@
+<div id="request_form">
+  <% if @user.requested?(@course) %>
+    <%= render 'delete' %>
+  <% else %>
+    <%= render 'request', course: course %>
+  <% end %>
+</div>
