@@ -1,0 +1,4 @@
+<%= form_for(course.user_requests.find_by(user_id: @user.id),
+             html: { method: :delete }) do |f| %>
+  <%= f.submit "Delete", class: "btn" %>
+<% end %>

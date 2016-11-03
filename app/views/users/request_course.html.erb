@@ -11,6 +11,7 @@
       <th>Instructor</th>
       <th>Credit</th>
       <th>Timing</th>
+      <th>Status</th>
       <th>Request</th>
       <th colspan="3"></th>
     </tr>
@@ -25,10 +26,11 @@
         <td><%= course.instructor %></td>
         <td><%= course.credit %></td>
         <td><%= course.timing %></td>
-        <td><%= render 'request_form', course: course %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= course.user_requests.find_by(user_id: @user.id).status %></td> 
+        <td> <% if @user.requested?(course) %>
+                <%= render 'delete', course: course %>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -59,10 +61,10 @@
         <td><%= course.instructor %></td>
         <td><%= course.credit %></td>
         <td><%= course.timing %></td>
-        <td><%= render 'request_form', course: course %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <% if !@user.requested?(course) %>
+                <%= render 'request', course: course %>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
