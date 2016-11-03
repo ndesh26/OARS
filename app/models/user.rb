@@ -10,4 +10,6 @@ class User < ApplicationRecord
     has_many :course_completeds
     has_secure_password
     has_many :course_requests, class_name: "Request", foreign_key: "user_id", dependent: :destroy
+    has_many :courses, through: :course_requests
+    end
 end
