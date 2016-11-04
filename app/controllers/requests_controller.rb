@@ -13,4 +13,9 @@ class RequestsController < ApplicationController
         user.delete_request(course)
         redirect_to request_course_user_path(user)
     end
+
+    def update
+        request = Request.find(params[:id])
+        request.update_attribute('status', params[:status])
+    end
 end

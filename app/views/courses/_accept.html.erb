@@ -1,0 +1,5 @@
+<%= form_for(Request.find_by(course_id: @course.id, user_id: user.id),
+             html: { method: :put }) do |f| %>
+  <div><%= hidden_field_tag :status, "Accepted" %></div>
+  <%= f.submit "Accept", class: "btn" %>
+<% end %>
