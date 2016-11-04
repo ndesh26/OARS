@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
     resources :requests,    only: [:create, :destroy, :update]
-    resources :courses
+    resources :courses do
+        member do
+            get :accept_requests
+        end
+    end
     get 'sessions/new'   
     resources :users do
         resources :course_completeds

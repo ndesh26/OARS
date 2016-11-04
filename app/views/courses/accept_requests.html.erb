@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pending Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Roll</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requested_users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.roll %></td>
+        <td> <% if !@course.accepted?(user) %>
+                <%= render 'accept', user: user %>
+            <% end %>
+        </td>
+        <td>    
+            <%= render 'reject', user: user %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
