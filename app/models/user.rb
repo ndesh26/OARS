@@ -23,4 +23,8 @@ class User < ApplicationRecord
     def requested?(course)
         courses.include?(course)
     end
+
+    def accepted?(course)
+        return course_requests.find_by(course_id: course.id).status == "Accepted"
+    end
 end
