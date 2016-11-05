@@ -38,8 +38,12 @@
 
   <div class="field">
     <%= f.label :timing %>
-    <%= f.text_field :timing %>
-  </div>
+    <%= f.radio_button :timing, '8:00 AM-9:00 AM MWF' %>8:00 AM - 9:00 AM MWF <br />
+    <%= f.radio_button :timing, '9:00 AM -10:00 AM MTTh' %>9:00 AM - 10:00 AM MTTh<br />
+    <%= f.radio_button :timing, '10:00 AM - 11:00 AM TWF' %> 10:00 AM - 11:00 AM TWF<br />
+    <%= f.radio_button :timing, '12:00 PM - 1:00 PM TWTh' %>12:00 PM - 1:00 PM TWTh<br />
+    <%= f.radio_button :timing, '5:00 PM -6:00 PM MTF'%>5:00 PM - 6:00 PM MTF<br />
+   </div>
 
   <div class="actions">
     <%= f.submit %>
