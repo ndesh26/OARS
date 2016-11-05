@@ -61,6 +61,11 @@ class CoursesController < ApplicationController
     end
   end
 
+  def accept_requests
+    @course = Course.find(params[:id])
+    @requested_users = @course.users
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

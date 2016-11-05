@@ -27,7 +27,7 @@
         <td><%= course.credit %></td>
         <td><%= course.timing %></td>
         <td><%= course.user_requests.find_by(user_id: @user.id).status %></td> 
-        <td> <% if @user.requested?(course) %>
+        <td> <% if @user.requested?(course) && !@user.accepted?(course)%>
                 <%= render 'delete', course: course %>
             <% end %>
         </td>
