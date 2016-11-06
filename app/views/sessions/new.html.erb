@@ -1,13 +1,19 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<%= stylesheet_link_tag "form_design.css" %>
+<h1>Login</h1>
+<div class="form_design">
  <%= form_for(:session, url: login_path) do |f| %>
-
+      <div class="field">
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+      </div>
 
+      <div class="field">
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
+      </div>
 
+      <div class="actions">
       <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
 <% end %>
-
+</div>
