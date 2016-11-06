@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
 
   # GET /users
   # GET /users.json
@@ -72,6 +73,12 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def logged_in_user
+        unless logged_in?
+            redirect_to login_url
+        end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
