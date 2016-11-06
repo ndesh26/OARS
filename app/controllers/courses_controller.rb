@@ -1,7 +1,6 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user 
-  before_action :correct_user
+  before_action :set_course, only: [:show, :edit, :update, :destroy] 
+  before_action :correct_user_admin, only: [:new,:edit,:create,:update,:destroy]
  
   # GET /courses
   # GET /courses.json
@@ -75,9 +74,8 @@ class CoursesController < ApplicationController
         end
     end
 
-    def correct_user
-        @user = User.find(params[:id])
-        redirect_to(root_url) unless current_user?(@user)
+    def correct_user_admin
+        redirect_to(root_url) unless current_user_admin?
     end
 
 
