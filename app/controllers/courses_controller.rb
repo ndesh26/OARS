@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy] 
-  before_action :correct_user_admin, only: [:new,:edit,:create,:update,:destroy]
   before_action :logged_in_user, only: [:new,:edit,:create,:update,:destroy] 
+  before_action :correct_user_admin, only: [:new,:edit,:create,:update,:destroy]
   # GET /courses
   # GET /courses.json
   def index
