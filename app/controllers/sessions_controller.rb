@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         # Log the user in and redirect to the user's show page.
         log_in user
         redirect_back_or user
-    else if instructor && instructor.authenticate(param[:session][:password])
+    elsif instructor && instructor.authenticate(params[:session][:password])
         log_in instructor
         redirect_back_or instructor
     else
