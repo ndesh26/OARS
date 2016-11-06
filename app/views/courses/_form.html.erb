@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "form_design.css" %>
+<div class="form_design">
 <%= form_for(course) do |f| %>
   <% if course.errors.any? %>
     <div id="error_explanation">
@@ -49,3 +51,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>  

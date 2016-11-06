@@ -1,0 +1,10 @@
+.form_design {
+    text-align: center;
+    border-style: solid;
+    border-width: 3px;
+    padding: 2px;
+    border-color: red;
+    background-color: lightgrey;
+    margin-left: 400px;
+    margin-right: 400px;
+}
