@@ -4,27 +4,11 @@
 body {
     font-family: Helvetica, Geneva, Arial, sans-serif;
     font-size: small;
-    font-color: #000;
+    font-color: white;
     background-color: #F0FFFF;
 }
  
 h1 {
+    margin-top: 70px;
     text-align: center;
 }
-
-table {
-    width: 100%;
-    background-color: lightgrey;
-}    
-
-th {
-    background-color: grey;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover{background-color:grey};
