@@ -1,6 +1,8 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user 
+  before_action :correct_user
+ 
   # GET /courses
   # GET /courses.json
   def index
@@ -71,6 +73,18 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.find(params[:id])
     end
+    def logged_in_user
+        unless logged_in?
+            store_location
+            redirect_to login_url
+        end
+    end
+
+    def correct_user
+        @user = User.find(params[:id])
+        redirect_to(root_url) unless current_user?(@user)
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
