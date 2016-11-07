@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "form_design.css" %>
-<style> 
+<style>
 .example1 {
  height: 50px;  
  overflow: hidden;
@@ -45,11 +45,17 @@
  transform: translateX(-100%); 
  }
 }
+img {
+    width:300px;
+    height:300px;
+    display: block;
+    margin: 0 auto;
+}
 </style>
 <div class="example1">
 <h2>Welcome to OARS - Online Academic Registration Portal of IIT Kanpur</h2>
 </div>
-<h1>Login</h1>
+<h1 style="margin-top: 20px;">Login</h1>
 <div class="form_design">
  <%= form_for(:session, url: login_path) do |f| %>
       <div class="field">
@@ -65,5 +71,8 @@
       <div class="actions">
       <%= f.submit "Log in", class: "btn btn-primary" %>
       </div>
-<% end %>
+  <% end %>
 </div>
+<br>
+<br>
+<%=image_tag :"iitk.png"%>
