@@ -1,7 +1,14 @@
 <%= stylesheet_link_tag "table_design.css" %>
+<%= stylesheet_link_tag "navigation_bar.css" %>
+<ul>
+        <li><a href="../../">Home</a></li>
+        <li class="active"><%= link_to "Transcript", user_course_completeds_path(current_user) %></li>
+        <li><%= link_to "Course Request", request_course_user_path(current_user) %></li>
+        <li><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<h1>Course Completeds</h1>
+<h1>Courses Completed</h1>
 
 <table>
   <thead>
