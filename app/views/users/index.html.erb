@@ -3,7 +3,7 @@
 <ul>
     <li><a class="active">Home</a></li>
     <li><%= link_to "Transcript", user_course_completeds_path(current_user) %></li>
-    <li><a href="users">Course Request</a></li>
+    <li><%= link_to "Course Request", request_course_user_path(current_user) %></li>
     <li><%= link_to 'Log Out', logout_path, method: "delete" %></li>
 </ul>
 <p id="notice"><%= notice %></p>
