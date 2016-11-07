@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :course_stores
   resources :instructors
     resources :requests,    only: [:create, :destroy, :update]
     resources :courses do

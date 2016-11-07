@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Course Stores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Code</th>
+      <th>Dept</th>
+      <th>Credit</th>
+      <th>Grade</th>
+      <th>Sem</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_stores.each do |course_store| %>
+      <tr>
+        <td><%= course_store.title %></td>
+        <td><%= course_store.code %></td>
+        <td><%= course_store.dept %></td>
+        <td><%= course_store.credit %></td>
+        <td><%= course_store.grade %></td>
+        <td><%= course_store.sem %></td>
+        <td><%= course_store.user_id %></td>
+        <td><%= link_to 'Show', course_store %></td>
+        <td><%= link_to 'Edit', edit_course_store_path(course_store) %></td>
+        <td><%= link_to 'Destroy', course_store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course Store', new_course_store_path %>

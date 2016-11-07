@@ -1,0 +1,2 @@
+class CourseStore < ApplicationRecord
+end
