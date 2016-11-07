@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course_store.title %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @course_store.code %>
+</p>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @course_store.dept %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @course_store.credit %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @course_store.grade %>
+</p>
+
+<p>
+  <strong>Sem:</strong>
+  <%= @course_store.sem %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @course_store.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_course_store_path(@course_store) %> |
+<%= link_to 'Back', course_stores_path %>
