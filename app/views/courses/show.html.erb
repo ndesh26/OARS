@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "show_details.css" %>
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Dept:</strong>
   <%= @course.dept %>
@@ -29,6 +31,7 @@
   <strong>Timing:</strong>
   <%= @course.timing %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

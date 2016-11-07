@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "show_details.css" %>
 <p id="notice"><%= notice %></p>
 
+<div class = "show">
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -29,6 +31,7 @@
   <strong>Dob:</strong>
   <%= @user.dob %>
 </p>
+</div>  
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

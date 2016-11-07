@@ -1,0 +1,11 @@
+.show  {
+    text-align: center;
+    padding: 2px;
+    border-radius: 4px;
+    background-color: lightgrey;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-style: ridge;
+    border-width: 4px;
+    border-color: lightgrey;
+}
