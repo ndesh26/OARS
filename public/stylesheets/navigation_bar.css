@@ -9,7 +9,12 @@ ul {
     width: 100%;
 }
 
-li {
+.right {
+    float: right;
+    background-color: green;
+}
+
+.left {
     float: left;
 }
 

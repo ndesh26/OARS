@@ -1,10 +1,11 @@
 <%= stylesheet_link_tag "navigation_bar.css" %>
 <%= stylesheet_link_tag "table_design.css" %>
 <ul>
-    <li><a class="active">Home</a></li>
-    <li><%= link_to "Transcript", user_course_completeds_path(current_user) %></li>
-    <li><%= link_to "Course Request", request_course_user_path(current_user) %></li>
-    <li><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+    <li class="left"><a class="active">Home</a></li>
+    <li class="left"><%= link_to "Transcript", user_course_completeds_path(current_user) %></li>
+    <li class="left"><%= link_to "Course Request", request_course_user_path(current_user) %></li>
+    <li class="left"><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+    <li class="right"><a><%= current_user.name %></a></li>
 </ul>
 <p id="notice"><%= notice %></p>
 <h1>Users</h1>
