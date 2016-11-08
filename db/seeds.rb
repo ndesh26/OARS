@@ -37,6 +37,7 @@ end
 Course.create!(dept:  "CSE",
              code: "CS34#{n+5}",
              title: "Algo-#{n+2}",
+             email: "ins#{n+1}@iitk.ac.in",
              instructor: "Sir anuj cuti pie",
              credit: "9",
              timing: "12:00-1:00")
