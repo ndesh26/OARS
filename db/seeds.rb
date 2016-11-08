@@ -32,3 +32,12 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+5.times do |n|
+Course.create!(dept:  "CSE",
+             code: "CS34#{n+5}",
+             title: "Algo-#{n+2}",
+             instructor: "Sir anuj cuti pie",
+             credit: "9",
+             timing: "12:00-1:00")
+end
