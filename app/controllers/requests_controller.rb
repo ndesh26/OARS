@@ -30,7 +30,11 @@ class RequestsController < ApplicationController
     end
 
     def correct_user
-        @user = User.find(params[:id])
+        if (params.has_key?(:id))
+            @user = User.find(params[:id])
+        else
+            @user = User.find(params[:user_id])
+        end
         redirect_to(root_url) unless current_user?(@user)
     end
 
