@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
-    before_action :logged_in_user
-    before_action :correct_user
+    before_action :logged_in_user, only: [:create]
+    before_action :correct_user, only: [:create]
     def create
         user = User.find(params[:user_id])
         course = Course.find(params[:course_id])
@@ -11,6 +11,7 @@ class RequestsController < ApplicationController
     def destroy
         request = Request.find(params[:id])
         user = request.user
+        redirect_to(root_url) unless current_user?(user)
         course =request.course
         user.delete_request(course)
         redirect_to request_course_user_path(user)
