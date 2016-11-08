@@ -15,6 +15,10 @@ module SessionsHelper
     def current_user?(user)
         (user == current_user) || (current_user.admin?)
     end
+
+    def instructor_right?(course)
+        course.email == session[:user_id]
+    end
     # Returns true if the user is logged in, false otherwise.
     def logged_in?
         !current_user.nil?

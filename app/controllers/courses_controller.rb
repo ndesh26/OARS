@@ -1,7 +1,8 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy] 
-  before_action :logged_in_user, only: [:new,:edit,:create,:update,:destroy] 
+  before_action :logged_in_user, only: [:new,:edit,:create,:update,:destroy, :accept_requests] 
   before_action :correct_user_admin, only: [:new,:edit,:create,:update,:destroy]
+  before_action :correct_instructor, only: [:accept_requests]
   # GET /courses
   # GET /courses.json
   def index
@@ -77,6 +78,11 @@ class CoursesController < ApplicationController
             store_location
             redirect_to login_url
         end
+    end
+
+    def correct_instructor
+        @course = Course.find(params[:id]);
+        redirect_to(root_url) unless instructor_right?(@course)
     end
 
     def correct_user_admin
