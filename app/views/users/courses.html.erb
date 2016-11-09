@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ongoing Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Credit</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ongoing_courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.code %></td>
+        <td><%= course.credit %></td>
+        <td><%= course.grade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Completed Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Credit</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @completed_courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.code %></td>
+        <td><%= course.credit %></td>
+        <td><%= course.grade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

@@ -69,6 +69,13 @@ class UsersController < ApplicationController
     @courses = Course.all
   end
 
+  # GET /user/:id/courses
+  def courses
+    @user = User.find(params[:id])
+    @ongoing_courses = @user.ongoing_courses
+    @completed_courses = @user.completed_courses
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

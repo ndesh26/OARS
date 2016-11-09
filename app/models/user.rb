@@ -12,11 +12,13 @@ class User < ApplicationRecord
     has_many :course_requests, class_name: "Request", foreign_key: "user_id", dependent: :destroy
     has_many :courses, through: :course_requests
     validate :unique_name
-
+    has_many :completed_courses, -> { where grade: ['A*', 'A', 'B', 'C', 'D', 'E', 'F'] }, class_name: "CourseStore", foreign_key: "user_id"
+    has_many :ongoing_courses, -> { where grade: 'ongoing'}, class_name: "CourseStore", foreign_key: "user_id"
+ 
     def unique_name
         self.errors.add(:email, 'is already taken') if Instructor.where(email: self.email).exists?
     end
- 
+
     def request(course)
         course_requests.create(course_id: course.id, status: "Waiting")
     end
