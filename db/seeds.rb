@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)i
-User.create!(name:  "Example User",
+User.create!(name:  "Admin",
              email: "admin@iitk.ac.in",
-             roll: "12345",
+             roll: "14116",
              phone: "1234567890",
-             address: "hell",
-             dob: "1796",
+             address: "Hall - 3",
+             dob: "30 September 1996",
              password:              "admin123",
              password_confirmation: "admin123",
              admin: true)
@@ -18,9 +18,9 @@ User.create!(name:  "Example User",
 99.times do |n|
   name  = Faker::Name.name
   email = "user#{n+1}@iitk.ac.in"
-  roll = "#{n+1}"
+  roll = "14#{n+200}"
   phone = "1234567890"
-  address = "hell"
+  address = "Hall-3"
   dob = "1 July 1996"
   password = "password"
   User.create!(name:  name,
@@ -33,20 +33,30 @@ User.create!(name:  "Example User",
                password_confirmation: password)
 end
 
-60.times do |n|
-Instructor.create!(name: "Sir Nayan",
+90.times do |n|
+Instructor.create!(name: "Dr. Donald Trump",
                    dept: "CSE",
                    password: "password",
                    email: "ins#{n+1}@iitk.ac.in")
 end
 
-60.times do |n|
+40.times do |n|
 Course.create!(dept:  "CSE",
-              code: "CS34#{n+5}",
-              title: "Algo-#{n+2}",
+              code: "CS4#{n+25}",
+              title: "Computer Networks",
               email: "ins#{n+1}@iitk.ac.in",
-              instructor: "Sir Nayan",
+              instructor: "Dr. Donald Trump",
               credit: "9",
+              timing: "12:00-1:00")
+end
+
+40.times do |n|
+Course.create!(dept:  "CSE",
+              code: "CS6#{n+28}",
+              title: "Computer Systems Security",
+              email: "ins#{n+41}@iitk.ac.in",
+              instructor: "Dr. Donald Trump",
+              credit: "10",
               timing: "12:00-1:00")
 end
 
