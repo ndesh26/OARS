@@ -15,7 +15,7 @@
   <tbody>
     <% @ongoing_courses.each do |course| %>
       <tr>
-        <td><%= course.name %></td>
+        <td><%= course.title %></td>
         <td><%= course.code %></td>
         <td><%= course.credit %></td>
         <td><%= course.grade %></td>
@@ -39,7 +39,7 @@
   <tbody>
     <% @completed_courses.each do |course| %>
       <tr>
-        <td><%= course.name %></td>
+        <td><%= course.title %></td>
         <td><%= course.code %></td>
         <td><%= course.credit %></td>
         <td><%= course.grade %></td>
