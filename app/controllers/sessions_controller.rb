@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
       if(logged_in?)
-          redirect_to(root_url)
+          redirect_back_or(root_url)
       end
   end
 
@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
         # Log the user in and redirect to the user's show page.
         log_in user
-        redirect_back_or user
+        redirect_back_or(user)
     elsif instructor && instructor.authenticate(params[:session][:password])
         log_in instructor
-        redirect_back_or instructor
+        redirect_back_or(instructor)
     else
         flash[:danger] = 'invaild login';
         # Create an error message.
@@ -25,6 +25,6 @@ class SessionsController < ApplicationController
 
   def destroy
       log_out
-      redirect_to root_url
+      redirect_to login_url
   end
 end

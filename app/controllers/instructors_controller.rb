@@ -3,6 +3,8 @@ class InstructorsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit,:update] 
   before_action :correct_user, only: [:edit,:update]
+  before_action :correct_user_admin, only: [:index]
+ 
  
   # GET /instructors
   # GET /instructors.json
@@ -78,8 +80,15 @@ class InstructorsController < ApplicationController
 
     def correct_user
         @user = Instructor.find(params[:id])
-        redirect_to(root_url) unless current_user?(@user)
+        @user1 = Instructor.find_by(email: session[:user_id])
+        redirect_to @user1 unless current_user?(@user)
     end
+
+    def correct_user_admin
+         @user1 = Instructor.find_by(email: session[:user_id])
+        redirect_to @user1 unless current_user_admin?
+    end
+
 
 
     # Never trust parameters from the scary internet, only allow the white list through.

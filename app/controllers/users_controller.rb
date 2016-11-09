@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:index, :show, :edit, :update, :request_course] 
-  before_action :correct_user, only: [:edit,:update,:request_course]
+  before_action :logged_in_user, only: [:index, :show, :edit, :update, :request_course,:courses] 
+  before_action :correct_user, only: [:show,:edit,:update,:request_course,:courses]
+  before_action :correct_user_admin, only: [:index]
+ 
   # GET /users
   # GET /users.json
   def index
@@ -89,9 +91,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def correct_user_admin
+        redirect_back_or(root_url) unless current_user_admin?
+    end
+
+
     def correct_user
         @user = User.find(params[:id])
-        redirect_to(root_url) unless current_user?(@user)
+        redirect_to('/404.html') unless current_user?(@user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

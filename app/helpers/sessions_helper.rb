@@ -30,7 +30,8 @@ module SessionsHelper
 
     # Redirects to stored location (or to the default).
     def redirect_back_or(default)
-        redirect_to(session[:forwarding_url] || default)
+        @user = User.find_by(email: session[:user_id]) ||Instructor.find_by(email: session[:user_id])
+        redirect_to( session[:forwarding_url] || @user)
         session.delete(:forwarding_url)
     end
 
