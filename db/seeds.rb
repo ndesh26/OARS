@@ -33,12 +33,31 @@ User.create!(name:  "Example User",
                password_confirmation: password)
 end
 
-5.times do |n|
+60.times do |n|
+Instructor.create!(name: "Sir Nayan",
+                   dept: "CSE",
+                   password: "password",
+                   email: "ins#{n+1}@iitk.ac.in")
+end
+
+60.times do |n|
 Course.create!(dept:  "CSE",
-             code: "CS34#{n+5}",
-             title: "Algo-#{n+2}",
-             email: "ins1@iitk.ac.in",
-             instructor: "Sir anuj cuti pie",
-             credit: "9",
-             timing: "12:00-1:00")
+              code: "CS34#{n+5}",
+              title: "Algo-#{n+2}",
+              email: "ins#{n+1}@iitk.ac.in",
+              instructor: "Sir Nayan",
+              credit: "9",
+              timing: "12:00-1:00")
+end
+
+50.times do |n|
+Request.create!(user_id: "#{n+1}",
+                course_id: "#{n+1}",
+                status: "waiting")
+end
+
+50.times do |n|
+Request.create!(user_id: "#{n+1}",
+                course_id: "#{n+2}",
+                status: "accepted")
 end
