@@ -63,7 +63,7 @@ Request.create!(user_id: "#{n+1}",
 end
 
 20.times do |n|
-CourseStore.create!(title: "Computing Laboratory-#{n+1}" ,
+CourseStore.create!(title: "Computing Laboratory" ,
                     code: "CS2#{n+50}",
                     dept: "CSE",
                     credit: "6",
@@ -73,7 +73,7 @@ CourseStore.create!(title: "Computing Laboratory-#{n+1}" ,
 end
 
 20.times do |n|
-CourseStore.create!(title: "Computer Architecture-#{n+1}" ,
+CourseStore.create!(title: "Computer Architecture" ,
                     code: "CS4#{n+22}",
                     dept: "CSE",
                     credit: "9",
@@ -83,7 +83,7 @@ CourseStore.create!(title: "Computer Architecture-#{n+1}" ,
 end
 
 20.times do |n|
-CourseStore.create!(title: "Functional Programming-#{n+1}" ,
+CourseStore.create!(title: "Functional Programming" ,
                     code: "CS6#{n+48}",
                     dept: "CSE",
                     credit: "9",
@@ -93,7 +93,7 @@ CourseStore.create!(title: "Functional Programming-#{n+1}" ,
 end
 
 20.times do |n|
-CourseStore.create!(title: "Algorithms-#{n+1}" ,
+CourseStore.create!(title: "Algorithms" ,
                     code: "CS3#{n+45}",
                     dept: "CSE",
                     credit: "9",
@@ -103,7 +103,7 @@ CourseStore.create!(title: "Algorithms-#{n+1}" ,
 end
 
 20.times do |n|
-CourseStore.create!(title: "Machine Learning-#{n+1}" ,
+CourseStore.create!(title: "Machine Learning Techniques" ,
                     code: "CS7#{n+71}",
                     dept: "CSE",
                     credit: "9",
@@ -113,7 +113,7 @@ CourseStore.create!(title: "Machine Learning-#{n+1}" ,
 end
 
 20.times do |n|
-CourseStore.create!(title: "Physics-#{n+1}",
+CourseStore.create!(title: "Physics",
                     code: "PHY1#{n+10}",
                     dept: "PHY",
                     credit: "11",
@@ -123,7 +123,7 @@ CourseStore.create!(title: "Physics-#{n+1}",
 end
 
 20.times do |n|
-CourseStore.create!(title: "Mathematics-#{n+1}",
+CourseStore.create!(title: "Mathematics",
                     code: "MTH1#{n+10}",
                     dept: "MTH",
                     credit: "11",
@@ -133,8 +133,8 @@ CourseStore.create!(title: "Mathematics-#{n+1}",
 end
 
 20.times do |n|
-CourseStore.create!(title: "Psychology-#{n+1}",
-                    code: "PSY#{n+50}",
+CourseStore.create!(title: "Social Psychology",
+                    code: "PSY1#{n+50}",
                     dept: "HSS",
                     credit: "11",
                     grade: "B",
@@ -143,7 +143,7 @@ CourseStore.create!(title: "Psychology-#{n+1}",
 end
 
 20.times do |n|
-CourseStore.create!(title: "Manufacturing-#{n+1}",
+CourseStore.create!(title: "Manufacturing Processes",
                     code: "TA2#{n+10}",
                     dept: "ME",
                     credit: "8",
@@ -153,7 +153,7 @@ CourseStore.create!(title: "Manufacturing-#{n+1}",
 end
 
 20.times do |n|
-CourseStore.create!(title: "Electronics-#{n+1}",
+CourseStore.create!(title: "Introduction to Electronics",
                     code: "EE2#{n+10}",
                     dept: "EE",
                     credit: "14",
