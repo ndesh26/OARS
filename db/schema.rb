@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161108191158) do
 
-  create_table "course_completeds", force: :cascade do |t|
-    t.string   "name"
-    t.string   "code"
-    t.integer  "credit"
-    t.string   "grade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_course_completeds_on_user_id"
-  end
-
   create_table "course_stores", force: :cascade do |t|
     t.string   "title"
     t.string   "code"

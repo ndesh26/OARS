@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     end
     get 'sessions/new'   
     resources :users do
-        resources :course_completeds
-        member do
+              member do
             get :request_course
             get :courses
         end

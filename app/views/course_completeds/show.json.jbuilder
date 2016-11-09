@@ -1,1 +1,0 @@
-json.partial! "course_completeds/course_completed", course_completed: @course_completed

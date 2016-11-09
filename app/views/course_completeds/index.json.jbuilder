@@ -1,1 +1,0 @@
-json.array! @course_completeds, partial: 'course_completeds/course_completed', as: :course_completed
