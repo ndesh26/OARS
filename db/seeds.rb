@@ -61,3 +61,103 @@ Request.create!(user_id: "#{n+1}",
                 course_id: "#{n+2}",
                 status: "accepted")
 end
+
+20.times do |n|
+CourseStore.create!(title: "Computing Laboratory-#{n+1}" ,
+                    code: "CS2#{n+50}",
+                    dept: "CSE",
+                    credit: "6",
+                    grade: "ongoing",
+                    sem: "2",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Computer Architecture-#{n+1}" ,
+                    code: "CS4#{n+22}",
+                    dept: "CSE",
+                    credit: "9",
+                    grade: "ongoing",
+                    sem: "2",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Functional Programming-#{n+1}" ,
+                    code: "CS6#{n+48}",
+                    dept: "CSE",
+                    credit: "9",
+                    grade: "ongoing",
+                    sem: "2",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Algorithms-#{n+1}" ,
+                    code: "CS3#{n+45}",
+                    dept: "CSE",
+                    credit: "9",
+                    grade: "ongoing",
+                    sem: "2",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Machine Learning-#{n+1}" ,
+                    code: "CS7#{n+71}",
+                    dept: "CSE",
+                    credit: "9",
+                    grade: "ongoing",
+                    sem: "2",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Physics-#{n+1}",
+                    code: "PHY1#{n+10}",
+                    dept: "PHY",
+                    credit: "11",
+                    grade: "A",
+                    sem: "1",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Mathematics-#{n+1}",
+                    code: "MTH1#{n+10}",
+                    dept: "MTH",
+                    credit: "11",
+                    grade: "B",
+                    sem: "1",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Psychology-#{n+1}",
+                    code: "PSY#{n+50}",
+                    dept: "HSS",
+                    credit: "11",
+                    grade: "B",
+                    sem: "1",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Manufacturing-#{n+1}",
+                    code: "TA2#{n+10}",
+                    dept: "ME",
+                    credit: "8",
+                    grade: "C",
+                    sem: "1",
+                    user_id: "#{n+1}")
+end
+
+20.times do |n|
+CourseStore.create!(title: "Electronics-#{n+1}",
+                    code: "EE2#{n+10}",
+                    dept: "EE",
+                    credit: "14",
+                    grade: "A*",
+                    sem: "1",
+                    user_id: "#{n+1}")
+end
