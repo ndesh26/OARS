@@ -11,7 +11,12 @@ class User < ApplicationRecord
     has_secure_password
     has_many :course_requests, class_name: "Request", foreign_key: "user_id", dependent: :destroy
     has_many :courses, through: :course_requests
+    validate :unique_name
 
+    def unique_name
+        self.errors.add(:email, 'is already taken') if Instructor.where(email: self.email).exists?
+    end
+ 
     def request(course)
         course_requests.create(course_id: course.id, status: "Waiting")
     end

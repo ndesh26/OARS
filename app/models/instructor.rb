@@ -5,4 +5,9 @@ class Instructor < ApplicationRecord
  
     validates :password, :presence => true, :length => { :in => 6..20 }
     has_secure_password
+    validate :unique_name
+
+    def unique_name
+        self.errors.add(:email, 'is already taken') if User.where(email: self.email).exists?
+    end
  end
