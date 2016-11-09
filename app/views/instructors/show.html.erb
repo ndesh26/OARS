@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "show_details.css" %>
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Name:</strong>
   <%= @instructor.name %>
@@ -11,14 +13,10 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @instructor.password_digest %>
-</p>
-
-<p>
   <strong>Email:</strong>
   <%= @instructor.email %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_instructor_path(@instructor) %> |
 <%= link_to 'Back', instructors_path %>
