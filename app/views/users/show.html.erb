@@ -1,4 +1,14 @@
 <%= stylesheet_link_tag "show_details.css" %>
+<%= stylesheet_link_tag "navigation_bar.css" %>
+<%= stylesheet_link_tag "table_design.css" %>
+<ul>
+     <li class="left"><a class="active">Home</a></li>
+     <li class="left"><%= link_to "Transcript", courses_user_path(current_user) %></li>
+     <li class="left"><%= link_to "Course Request", request_course_user_path(current_user) %></li>
+     <li class="left"><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+     <li class="right"><a><%= current_user.name %></a></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 
 <div class = "show">
@@ -33,6 +43,42 @@
 </p>
 </div>  
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to 'Log_out', logout_path, method: "delete" %>
+<br>
+<hr>
+
+<h2 style="text-align:center; margin-top:10px; color: red">Pre-Registration Dates for 2016-17 2nd Semester</h2>
+<h2 style="text-align:center; color: purple">1st November 2016 - 8th November 2016</h2>
+
+<hr>
+
+<h2 style="text-align:center; margin-top:30px">Courses Offered Next Semester</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dept</th>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Instructor</th>
+      <th>Email</th>
+      <th>Credit</th>
+      <th>Timing</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.dept %></td>
+        <td><%= course.code %></td>
+        <td><%= course.title %></td>
+        <td><%= course.instructor %></td>
+        <td><%= course.email %></td>
+        <td><%= course.credit %></td>
+        <td><%= course.timing %></td>
+        <td><%= link_to 'Show', course %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
