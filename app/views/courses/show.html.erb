@@ -1,5 +1,13 @@
 <%= stylesheet_link_tag "show_details.css" %>
+<%= stylesheet_link_tag "navigation_bar.css" %>
 <p id="notice"><%= notice %></p>
+
+<ul>
+     <li class="left"><%= link_to 'Home', login_path(current_user) %></li>
+     <li class="left"><%= link_to 'Course List', courses_path %></a></li>
+     <li class="left"><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+     <li class="right"><a><%= current_user.name %></a></li>
+</ul>
 
 <div class="show">
 <p>
@@ -38,6 +46,6 @@
   <%= @course.timing %>
 </p>
 </div>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<br>
+<hr>
+<p style="color:red; font-size:15px; text-align: center"><%= link_to 'Edit Course Details', edit_course_path(@course) %><br><br><strong>(Admin Acess Only)</strong></p>
