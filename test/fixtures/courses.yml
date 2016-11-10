@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  dept: MyString
-  code: MyString
-  title: MyString
-  instructor: MyString
-  credit: 1
-  timing: MyString
+course1:
+  dept: "CSE"
+  code: "CS456"
+  title: "Sample Course"
+  instructor: "Sample Prof"
+  credit: 9
+  timing: "10:00-11:00 MWF"
+  email: "ins1@abc.xyz"
 
-two:
-  dept: MyString
-  code: MyString
-  title: MyString
-  instructor: MyString
-  credit: 1
-  timing: MyString
+course2:
+  dept: "CSE"
+  code: "CS552"
+  title: "Sample Course 2"
+  instructor: "Sample Prof 2"
+  credit: 9
+  timing: "10:00-11:00 MWF"
+  email: "ins2@abc.xyz"

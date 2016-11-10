@@ -1,1 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+request11:
+    user_id: 1
+    course_id: 1
+    status: "waiting"
+
+request12:
+    user_id: 1
+    course_id: 2
+    status: "accepted"
+
+request22:
+    user_id: 2
+    course_id: 2
+    status: "accepted"
