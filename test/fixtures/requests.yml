@@ -3,14 +3,14 @@
 request11:
     user_id: 1
     course_id: 1
-    status: "waiting"
+    status: "Waiting"
 
 request12:
     user_id: 1
     course_id: 2
-    status: "accepted"
+    status: "Accepted"
 
 request22:
     user_id: 2
     course_id: 2
-    status: "accepted"
+    status: "Accepted"
