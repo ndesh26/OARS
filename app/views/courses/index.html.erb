@@ -1,4 +1,14 @@
 <%= stylesheet_link_tag "table_design.css" %>
+
+<ul>
+     <li class="left"><a href="">Home</a></li>
+     <li class="left"><%= link_to 'Edit Personal Details', edit_instructor_path(@instructor) %></li>
+     <li class="left"><a href="../../courses">Course List</a></li>
+     <li class="left"><%= link_to "Course Requests", accept_requests_course_path(current_user) %></li>
+     <li class="left"><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+     <li class="right"><a><%= current_user.name %></a></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 <h1>Courses</h1>
 

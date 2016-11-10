@@ -1,4 +1,13 @@
 <%= stylesheet_link_tag "table_design.css" %>
+<%= stylesheet_link_tag "navigation_bar.css" %>
+<ul>
+     <li class="left"><%= link_to 'Home', instructor_path(current_user) %></li>
+     <li class="left"><%= link_to 'Edit Personal Details', edit_instructor_path(current_user) %></li>
+     <li class="left"><%= link_to 'List of All Instructors', instructors_path(current_user) %></li>
+     <li class="left active"><%= link_to "Course Requests", accept_requests_course_path(current_user) %></li>
+     <li class="left"><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+     <li class="right"><a><%= current_user.name %></a></li>
+</ul>
 <p id="notice"><%= notice %></p>
 
 <h1>Pending Requests</h1>

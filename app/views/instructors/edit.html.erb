@@ -1,6 +1,14 @@
-<h1>Editing Instructor</h1>
+<%= stylesheet_link_tag "navigation_bar.css" %>
+<ul>
+     <li class="left"><%= link_to 'Home', instructor_path(@instructor) %></li>
+     <li class="left active"><%= link_to 'Edit Personal Details', edit_instructor_path(@instructor) %></li>
+     <li class="left"><%= link_to 'List of All Instructors', instructors_path(current_user) %></li>
+     <li class="left"><%= link_to "Course Requests", accept_requests_course_path(current_user) %></li>
+     <li class="left"><%= link_to 'Log Out', logout_path, method: "delete" %></li>
+     <li class="right"><a><%= current_user.name %></a></li>
+</ul>
+
+
+<h1>Please Update Your Details</h1>
 
 <%= render 'form', instructor: @instructor %>
-
-<%= link_to 'Show', @instructor %> |
-<%= link_to 'Back', instructors_path %>

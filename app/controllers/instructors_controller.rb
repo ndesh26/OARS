@@ -3,7 +3,7 @@ class InstructorsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit,:update] 
   before_action :correct_user, only: [:edit,:update]
-  before_action :correct_user_admin, only: [:index]
+  #  before_action :correct_user_admin, only: [:index]
  
  
   # GET /instructors
@@ -15,6 +15,7 @@ class InstructorsController < ApplicationController
   # GET /instructors/1
   # GET /instructors/1.json
   def show
+     @courses = Course.all
   end
 
   # GET /instructors/new
