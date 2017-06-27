@@ -22,3 +22,6 @@
 
 .*.swp
 .*.swo
+
+# Contains docker env variables
+.env
