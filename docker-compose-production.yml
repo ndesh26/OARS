@@ -22,10 +22,6 @@ services:
     ports:
       - "80:80"
   
-    # use whatever volumes are configured for the app container
-    volumes_from:
-      - app
-
   # service configuration for our dockerized Rails app
   app:
   
@@ -37,7 +33,7 @@ services:
   
     # rely on the RAILS_ENV value of the host machine
     environment:
-      - RAILS_ENV=development
+      - RAILS_ENV=production
   
     # makes the app container aware of the DB container
     links:
@@ -46,11 +42,6 @@ services:
     # expose the port we configured Unicorn to bind to
     expose:
       - "3000"
-        #
-
-    # map our application source code, in full, to the application root of our container
-    volumes:
-      - .:/var/www/docker_example
   
   # service configuration for our database
   
