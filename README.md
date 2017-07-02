@@ -15,7 +15,7 @@ docker-compose.yml has the code for the development environment.
     docker-compose up -d
     docker-compose run web db:migrate db:seed
 
-The last command will create the db and add dummy values to the database. The credentials for the admin are `admin@iitk.ac.in/admin123`. To stop the
+The app is served on `localhost:3000`. The last command will create the db and add dummy values to the database. The credentials for the admin are `admin@iitk.ac.in/admin123`. To stop the
 server use `docker-compose stop` and `docker-compose start` to restart them. Use `docker-compose down` to delete the containers.
 
 ## Production
@@ -30,6 +30,8 @@ serving.
     echo "SECRET_KEY_BASE=your_secret" >> .env
     docker-compose -f docker-compose-production.yml up -d
     docker-compose run web db:migrate db:seed
+
+The app is server on `localhost:80` in this case.
 
 
 # The App
