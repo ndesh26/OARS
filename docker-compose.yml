@@ -5,27 +5,6 @@ volumes:
     driver: local
 
 services:
-  # service configuration for our web server
-  web:
-  
-    # set the build context to the root of the Rails app
-    build:
-      context: . 
-      # build with a different Dockerfile
-      dockerfile: config/containers/Dockerfile-nginx
-    
-    # makes the web container aware of the app container
-    links:
-      - app
-    
-    # expose the port we configured Nginx to bind to
-    ports:
-      - "80:80"
-  
-    # use whatever volumes are configured for the app container
-    volumes_from:
-      - app
-
   # service configuration for our dockerized Rails app
   app:
   
@@ -44,8 +23,8 @@ services:
       - db
   
     # expose the port we configured Unicorn to bind to
-    expose:
-      - "3000"
+    ports:
+        - "3000:3000"
         #
 
     # map our application source code, in full, to the application root of our container
