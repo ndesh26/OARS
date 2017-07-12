@@ -11,9 +11,6 @@ services:
     # use the Dockerfile next to this file
     build: .
   
-    # sources environment variable configuration for our app
-    env_file: .env
-  
     # rely on the RAILS_ENV value of the host machine
     environment:
       - RAILS_ENV=development
@@ -32,7 +29,6 @@ services:
       - .:/var/www/docker_example
   
   # service configuration for our database
-  
   db:
    
     # use the preferred version of the official Postgres image
